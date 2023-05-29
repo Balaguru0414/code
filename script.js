@@ -92,4 +92,84 @@ const arr2 = [1,2,3,4]
 
 const same = arr1.filter(el => arr2.includes(el));
 console.log(same)
+
+// %%%%%%%%%%%%%%%%%% BUBBLE SORT  %%%%%%%%%%%%%%%%%%
+
+let unsortedArray = [5,1,7,3,6,9,2,4,-2,-5,-9]
+let swapped;
+
+const bubbleSort = (arr) => {
+	swapped = false;
+	let end = arr.length - 1;
+	for(let i = 0; i < end; i++){
+		if (arr[i] > arr[i+1]) {
+			swapped = true;
+			let temp = arr[i];
+			arr[i] = arr[i+1];
+			arr[i+1] = temp;
+		}
+	}
+	end--;
+}
+
+do{
+	bubbleSort(unsortedArray);
+} while (swapped);
+
+console.log(unsortedArray);
+
+// %%%%%%%%%%%%%%%%%% FIBONACCI SERIES %%%%%%%%%%%%%%%%%%
+let n1=0,n2=1,next,i;
+
+const fibonacci = (num) => {
+	for(let i=1; i<=num; i++){
+		console.log(n1);
+		next = n1+n2;
+		n1 = n2;
+		n2 = next;
+	};
+};
+
+fibonacci(8);
+
+// %%%%%%%%%%%%%%%%%% SECOND LARGEST NUMBER %%%%%%%%%%%%%%%%%%
+const arr = [7,2,4,25,58,6,5,3,8];
+
+const getSecondLargestNumber = (arr = []) => {
+	let largestNumber = arr[0];
+	let secondLargestNumber = arr[0];
+
+	for(let i=0; i<arr.length; i++) {
+		if (arr[i] > largestNumber) {
+			secondLargestNumber = largestNumber;
+			largestNumber = arr[i];
+		} else if(arr[i] > secondLargestNumber) {
+			secondLargestNumber = arr[i];
+		}		
+	}
+	return secondLargestNumber;
+};
+
+console.log(getSecondLargestNumber(arr));
+
+// %%%%%%%%%%%%%%%%%% PRIME OR NOT %%%%%%%%%%%%%%%%%%
+let number = prompt("Please enter a number")
+
+if (number == 1) {
+	console.log(`${number} is neither prime nor composite number`);
+} else if(number < 1) {
+	console.log(`${number} is not a prime number`);
+} else if(number == 2){
+	console.log(`${number} is a prime number`);
+} else {
+	for(let i=2; i < number; i++){
+		if (number %i == 0) {
+			var res = `${number} is not a prime number`;
+			break;
+		} else {
+			var res = `${number} is a prime number`;
+		}
+	}
+	console.log(res)
+};
 */
