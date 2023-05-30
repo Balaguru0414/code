@@ -172,4 +172,51 @@ if (number == 1) {
 	}
 	console.log(res)
 };
+
+// %%%%%%%%%%%%%%%%%% BINARY SEARCH %%%%%%%%%%%%%%%%%%
+
+const values = [0,1,2,3,4,5,6,7,8,9,10];
+const values1 = [21,5,25,27]
+
+// const search = (val,arr) => {
+// 	for(let i=0; i < arr.length; i++){
+// 		if (val === arr[i]) return i;
+// 	}
+// 	return -1;
+// };
+// console.log(search(6,values))   // 6
+// console.log(search(21,values1)) // 2
+
+const binarySearch = (val,arr) => {
+	let left = 0;
+	let right = arr.length - 1;
+
+	while (left <= right) {
+		const middle = left + Math.floor((right - left) / 2);
+
+		if (val === arr[middle]) return middle;
+		if (val < arr[middle]) right = middle - 1;
+		else left = middle + 1;
+	}
+	return -1;
+};
+
+console.log(binarySearch(6,values));
+console.log(binarySearch(21,values1));
+
+// %%%%%%%%%%%%%%%%%% FIND FACTORIAL %%%%%%%%%%%%%%%%%%
+
+const factorial = (n) => {
+	if (n == 0) return 1;
+	else return factorial(n-1) * n;
+};
+console.log(factorial(6));
+
+// %%%%%%%%%%%%%%%%%% SUM ALL THE ELMENT IN AN ARRAY %%%%%%%%%%%%%%%%%%
+
+const array = [4,5,10];
+let sum = 0;
+array.forEach(n => sum += n);
+console.log(sum);
 */
+// %%%%%%%%%%%%%%%%%%  %%%%%%%%%%%%%%%%%%
