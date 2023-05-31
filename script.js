@@ -118,7 +118,41 @@ do{
 
 console.log(unsortedArray);
 
+// %%%%%%%%%%%%%%%%%% INSERTION SORT  %%%%%%%%%%%%%%%%%%
+
+// METHOD --1
+const array = [6,8,2,-5,3,-2,7]
+
+const insertionSort = (nums) => {
+	for (let i=1; i < nums.length; i++) {
+		for(let j=i; j > 0; j--) {
+			if (nums[j] < nums[j-1]) {
+				[nums[j],nums[j-1]] = [nums[j-1],nums[j]];
+			}
+		}
+	}
+	return nums;
+};
+console.log(insertionSort(array));
+
+// METHOD --2
+const insertion = (arr) => {
+	for (let i = 1; i < arr.length; i++) {
+		let curr = arr[i];
+		let j = i - 1;
+
+		while (j >= 0 && arr[j] > curr) {
+			arr[j + 1] = arr[j];
+			j--
+		}
+		arr[j + 1] = curr;
+	}
+	return arr;
+}
+
+console.log(insertion(array));
 // %%%%%%%%%%%%%%%%%% FIBONACCI SERIES %%%%%%%%%%%%%%%%%%
+
 let n1=0,n2=1,next,i;
 
 const fibonacci = (num) => {
@@ -133,6 +167,7 @@ const fibonacci = (num) => {
 fibonacci(8);
 
 // %%%%%%%%%%%%%%%%%% SECOND LARGEST NUMBER %%%%%%%%%%%%%%%%%%
+
 const arr = [7,2,4,25,58,6,5,3,8];
 
 const getSecondLargestNumber = (arr = []) => {
@@ -153,6 +188,7 @@ const getSecondLargestNumber = (arr = []) => {
 console.log(getSecondLargestNumber(arr));
 
 // %%%%%%%%%%%%%%%%%% PRIME OR NOT %%%%%%%%%%%%%%%%%%
+
 let number = prompt("Please enter a number")
 
 if (number == 1) {
