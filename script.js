@@ -218,5 +218,71 @@ const array = [4,5,10];
 let sum = 0;
 array.forEach(n => sum += n);
 console.log(sum);
+
+// %%%%%%%%%%%%%%%%%% OVER RIDING %%%%%%%%%%%%%%%%%%
+
+class Vehicle {
+	drive() {
+		console.log("you drive the vehicle");
+	}
+};
+
+class Car extends Vehicle {
+	drive() {
+		console.log("you drive the car");
+	}
+};
+
+class RaceCar extends Car {
+	drive() {
+		console.log("you drive the Race car ");
+	}
+};
+
+const racecar = new RaceCar();
+
+racecar.drive();
+
+// %%%%%%%%%%%%%%%%%% INHERITENCE %%%%%%%%%%%%%%%%%%
+
+class Animal {
+	constructor(){
+		this.alive = true;
+	}
+
+	eat () {
+		console.log("This animal is eating");
+	}
+};
+
+class Rabbit extends Animal {
+	run (){
+		console.log("Rabbit is Running");
+	}
+}
+
+class Fish extends Animal {
+	swim (){
+		console.log("Fish is Swimming");
+	}
+}
+
+class Parrot extends Animal {
+	fly (){
+		console.log("Parrot is flying");
+	}
+}
+
+const rabbit = new Rabbit();
+const fish = new Fish();
+const parrot = new Parrot();
+
+console.log(rabbit.alive);
+// rabbit.eat();
+// fish.eat();
+// parrot.eat();
+
+rabbit.run();
+fish.swim();
+parrot.fly();
 */
-// %%%%%%%%%%%%%%%%%%  %%%%%%%%%%%%%%%%%%
