@@ -322,3 +322,30 @@ rabbit.run();
 fish.swim();
 parrot.fly();
 */
+// %%%%%%%%%%%%%%%%%% REVERSE LINKED LIST %%%%%%%%%%%%%%%%%%
+
+let head = {
+	val : 1,
+	next : {
+		val : 2,
+		next : {
+			val : 3,
+			next : null,
+		}
+	}
+};
+
+function reverseLinkList(head) {
+	let prev = null;
+	let curr = head;
+
+	while (curr) {
+		let next = curr.next;
+		curr.next = prev;
+		prev = curr;
+		curr = next;
+	}
+	return prev;
+}
+
+console.log(reverseLinkList(head));
